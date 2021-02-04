@@ -25,7 +25,7 @@ def findEncodings(images):
         encodeList.append(encode)
         print(type(encode))
     return encodeList
- 
+    
 def markAttendance(name):
     with open('C:/VS_Code/python/OpenCV/Attendance.csv','r+') as f:
         myDataList = f.readlines()
@@ -94,4 +94,6 @@ while True:
             markAttendance(name)
  
     cv2.imshow('Webcam',img)
-    cv2.waitKey(1)
+    if cv2.waitKey(1) & 0xFF == ord('q'):
+            #save_known_faces()
+            break
